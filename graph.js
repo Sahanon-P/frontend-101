@@ -1,9 +1,6 @@
 window.onload = function () {
 
-var dps1 = []; // dataPoints for slot 1
-var dps2 = []; // dataPoints for slot 2
-var dps3 = []; // dataPoints for slot 3
-var dps4 = []; // dataPoints for slot 4
+var dps1 = []; var dps2 = []; var dps3 = []; var dps4 = [];
 
 var chart1 = new CanvasJS.Chart("slot1Chart", {
 	title :{ text: "Slot-1 Report"},
@@ -26,8 +23,9 @@ var chart4 = new CanvasJS.Chart("slot4Chart", {
 	data: [{type: "column", dataPoints: dps4}]
 });
 var xVal = 0;
-var yVal = 100; 
-var updateInterval = 1000;
+var yVal1 = 0; var yVal2 = 0; var yVal3 = 0; var yVal4 = 0;
+
+var updateInterval = 1000; // update every 1 second
 var dataLength = 20; // number of dataPoints visible at any point
 
 var updateChart = function (count) {
@@ -35,11 +33,19 @@ var updateChart = function (count) {
 	count = count || 1;
 
 	for (var j = 0; j < count; j++) {
-		yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
-		dps1.push({x: xVal, y: yVal });
-		dps2.push({x: xVal, y: yVal });
-		dps3.push({x: xVal, y: yVal });
-		dps4.push({x: xVal, y: yVal });
+		fetch("https://backend.cpsk-club.xyz/6210503659") // this should be backend's json url
+        .then(response => response.json())
+        .then((data) => {
+            yVal1 = parseInt(data.answer); // this should be data.Car1Total
+			yVal2 = parseInt(data.answer); // this should be data.Car2Total
+			yVal3 = parseInt(data.answer); // this should be data.Car3Total
+			yVal4 = parseInt(data.answer); // this should be data.Car4Total
+			console.log(data)
+        });
+		dps1.push({x: xVal, y: yVal1 });
+		dps2.push({x: xVal, y: yVal2 });
+		dps3.push({x: xVal, y: yVal3 });
+		dps4.push({x: xVal, y: yVal4 });
 		xVal++;
 	}
 
