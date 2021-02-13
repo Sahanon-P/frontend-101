@@ -26,7 +26,7 @@ function slot(){
 
 function getslot(i){
     c=i+1;
-    fetch(`/parking?slot=${c}`,{
+    fetch(`158.108.182.8:50000/parking?slot=${c}`,{  
         method: "GET",
         headers: {"Content-Type": "application/json"},
     }).then((x) => x.json())
