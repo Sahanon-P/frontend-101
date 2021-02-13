@@ -4,32 +4,32 @@ var dps1 = []; var dps2 = []; var dps3 = []; var dps4 = [];
 
 var chart1 = new CanvasJS.Chart("slot1Chart", {
 	title :{ text: "Slot-1 Report",horizontalAlign: "left"},
-	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
+	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(s)", interval: 1},
 	data: [{type: "column", dataPoints: dps1}],
 	backgroundColor: "rgba(225,150,150,0.25)",
 });
 var chart2 = new CanvasJS.Chart("slot2Chart", {
 	title :{ text: "Slot-2 Report",horizontalAlign: "left"},
-	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
+	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(s)", interval: 1},
 	data: [{type: "column", dataPoints: dps2}],
 	backgroundColor: "rgba(78,202,140,0.25)",
 });
 var chart3 = new CanvasJS.Chart("slot3Chart", {
 	title :{ text: "Slot-3 Report",horizontalAlign: "left"},
-	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
+	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(s)", interval: 1},
 	data: [{type: "column", dataPoints: dps3}],
 	backgroundColor: "rgba(78,171,202,0.25)",
 });
 var chart4 = new CanvasJS.Chart("slot4Chart", {
 	title :{ text: "Slot-4 Report",horizontalAlign: "left"},
-	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
+	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(s)", interval: 1},
 	data: [{type: "column", dataPoints: dps4}],
 	backgroundColor: "rgba(202,181,78,0.25)",
 });
 var xVal = 0;
 var yVal1 = 0; var yVal2 = 0; var yVal3 = 0; var yVal4 = 0;
 
-var updateInterval = 1000; // update is called every 60 seconds
+var updateInterval = 1000; // update is called every 1 seconds
 var dataLength = 5; // number of dataPoints visible at any point
 
 var updateChart = function (count) {
@@ -61,7 +61,7 @@ var updateChart = function (count) {
 		dps3.push({x: xVal, y: yVal3 });
 	}
 	for (var j = 0; j < count; j++) {
-		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json")
+		fetch("http://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json")
         .then(response => response.json())
 		.then((data) => {
             yVal4 = data.result4.money; 
