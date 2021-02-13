@@ -22,9 +22,13 @@
         <div id="box1" class="green_box">
             <div id ="boxtext1" class="green_txt"> Available  </div>
         </div>
-        <div id="box2" class="red_box">
-            <div id ="boxtext2" class="red_txt"> TIME <br>6.00 MIN</br> </div>
+        <div class="popup" onclick="popUp()">
+            <div id="box2" class="red_box">
+                <div id ="boxtext2" class="red_txt"> TIME <br>6.00 MIN</br> </div>
+            </div>
+            <span class="popuptext" id="myPopup">Popup text...</span>
         </div>
+        
         <div id="box3" class="green_box">
             <div id ="boxtext3" class="green_txt"> Available </div>
         </div>
@@ -33,6 +37,17 @@
         </div>
     </div>
 </body>
+
+<!-- Script For Pop up -->
+<script>
+    // When the user clicks on <div>, open the popup
+    function popUp() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+</script>
+
+<!-- Link Navigate -->
 <div id="bottom-center">
     <a href="report.html"> Total Result</a>
 </div>
