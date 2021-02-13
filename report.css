@@ -44,4 +44,29 @@
   vertical-align: middle;
   line-height: 150px; 
 }
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button:hover {
+  border:2px solid #4CAF50;
+  background-color: #ffffff; /* Green */
+  color: #4CAF50;
+}
+#bottom-center {
+  position:absolute;
+  bottom: a;
+  margin-top: auto;
+  right:30%;
+  left:50%;
+  /* margin-left:-100px; */
+}
 
