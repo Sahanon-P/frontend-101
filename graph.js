@@ -4,33 +4,33 @@ var dps1 = []; var dps2 = []; var dps3 = []; var dps4 = [];
 
 var chart1 = new CanvasJS.Chart("slot1Chart", {
 	title :{ text: "Slot-1 Report"},
-	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(s)"},
+	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
 	data: [{type: "column", dataPoints: dps1}],
-	backgroundColor: "rgba(225,150,150,0.25)"
+	backgroundColor: "rgba(225,150,150,0.25)",
 });
 var chart2 = new CanvasJS.Chart("slot2Chart", {
 	title :{ text: "Slot-2 Report"},
-	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(s)"},
+	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
 	data: [{type: "column", dataPoints: dps2}],
-	backgroundColor: "rgba(78,202,140,0.25)"
+	backgroundColor: "rgba(78,202,140,0.25)",
 });
 var chart3 = new CanvasJS.Chart("slot3Chart", {
 	title :{ text: "Slot-3 Report"},
-	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(s)"},
+	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
 	data: [{type: "column", dataPoints: dps3}],
-	backgroundColor: "rgba(78,171,202,0.25)"
+	backgroundColor: "rgba(78,171,202,0.25)",
 });
 var chart4 = new CanvasJS.Chart("slot4Chart", {
 	title :{ text: "Slot-4 Report"},
-	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(s)"},
+	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
 	data: [{type: "column", dataPoints: dps4}],
-	backgroundColor: "rgba(202,181,78,0.25)"
+	backgroundColor: "rgba(202,181,78,0.25)",
 });
 var xVal = 0;
 var yVal1 = 0; var yVal2 = 0; var yVal3 = 0; var yVal4 = 0;
 
-var updateInterval = 1000; // update is called every 1 second
-var dataLength = 20; // number of dataPoints visible at any point
+var updateInterval = 60000; // update is called every 60 seconds
+var dataLength = 5; // number of dataPoints visible at any point
 
 var updateChart = function (count) {
 
@@ -46,22 +46,22 @@ var updateChart = function (count) {
 			yVal4 = parseInt(data.answer); // this should be data.Car4Total
 			console.log(data)
         });
-
 		dps1.push({x: xVal, y: yVal1 });
 		dps2.push({x: xVal, y: yVal2 });
 		dps3.push({x: xVal, y: yVal3 });
 		dps4.push({x: xVal, y: yVal4 });
-		xVal++;
+		if(yVal1 != 0 && yVal2 != 0 &&  yVal3 != 0 &&  yVal4 != 0) // don't forward x-axis while initializing
+			xVal++;
 	}
 	
 	/*for (var j = 0; j < count; j++) {
 		fetch("https://backend.cpsk-club.xyz/twitter") // this should be backend's json url [{"",""},{"",""}]
         .then(response => response.json())
 		.then((datas) => {
-            yVal1 = datas[0].total_money; // Car1
-			yVal2 = datas[1].total_money; // Car2
-			yVal3 = datas[2].total_money; // Car3
-			yVal4 = datas[3].total_money; // Car4
+            yVal1 = datas[0].money; // Car1
+			yVal2 = datas[1].money; // Car2
+			yVal3 = datas[2].money; // Car3
+			yVal4 = datas[3].money; // Car4
         });
 		dps1.push({x: xVal, y: yVal1 });
 		dps2.push({x: xVal, y: yVal2 });
@@ -78,6 +78,7 @@ var updateChart = function (count) {
 };
 
 updateChart(dataLength);
+setTimeout(function(){updateChart()}, 1000); // 1 second delay for initializing chart
 setInterval(function(){updateChart()}, updateInterval);
 
 }
