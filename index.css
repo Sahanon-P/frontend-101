@@ -1,5 +1,5 @@
 @import url(//db.onlinewebfonts.com/c/b3431dba10e27f650ab860da2775b426?family=Adam+Warren+pro);
-#box1 {
+.green_box {
     border-radius: 25px;
     background: #a2e04b;
     padding: 20px;
@@ -7,7 +7,7 @@
     height: 500px;
   }
 
-#box2 {
+.red_box {
     border-radius: 25px;
     background: rgb(253, 87, 87);
     padding: 20px;
@@ -25,7 +25,7 @@
     display: inline-block;
   }
 
-#boxtext1{
+ .red_txt{
   background-color: black;
   font-family: "Adam Warren pro";
   color: white;
@@ -35,7 +35,7 @@
   line-height: 50px; 
 
 }
-#boxtext2{
+.green_txt{
   background-color: #a2e04b;
   color: blue;
   text-align: center;
