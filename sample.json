@@ -1,0 +1,22 @@
+{
+    "result":{
+        "parking_is_available": false,
+        "parking_time": 119.2,
+        "money": 2400},
+    "result2":{
+        "parking_is_available": true,
+        "parking_time": 100,
+        "money": 200},
+    "result3":{
+        "parking_is_available": false,
+        "parking_time": 300,
+        "money": 300},
+    "result4":{
+        "parking_is_available": true,
+        "parking_time": 12,
+        "money": 450},
+    "result5":{
+        "parking_is_available": true,
+        "parking_time": 112,
+        "money": 24}
+    }
