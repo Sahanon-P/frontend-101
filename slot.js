@@ -61,7 +61,7 @@ function getslot2(){
             if(sec < 10){
                 sec=char("0"+Char(sec));
             }
-            boxtext2.innerHTML=min+":"+sec+" MIN";
+            boxtext2.innerHTML="TIME\n"+min+":"+sec+" MIN";
         }
     });
 }
