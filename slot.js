@@ -64,9 +64,18 @@ function price(i,m){
     txt.innerHTML=m;
 }
 
+function hide(){
+   for(j=1;j<=4;j++){
+    var pop = document.getElementById(`coinbox${i}`);
+    var txt = document.getElementById(`cointext${i}`);
+    pop.style.display = "none";
+    txt.style.display = "none";
+   }
+}
 
-
-
+setInterval(() => {
+    hide();
+}, 10000);
 
 
 setInterval(() => {
