@@ -37,6 +37,7 @@ var updateChart = function (count) {
 	count = count || 1;
 
 	for (var j = 0; j < count; j++) {
+		//fetch(`https://exceed7.cpsk-club.xyz/parking?slot=1`,{  method: "GET", headers: {"Content-Type": "application/json"},})
 		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json")
         .then(response => response.json())
 		.then((data) => {
@@ -45,6 +46,7 @@ var updateChart = function (count) {
 		dps1.push({x: xVal, y: yVal1 });
 	}
 	for (var j = 0; j < count; j++) {
+		//fetch(`https://exceed7.cpsk-club.xyz/parking?slot=2`,{  method: "GET", headers: {"Content-Type": "application/json"},})
 		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json")
         .then(response => response.json())
 		.then((data) => {
@@ -53,6 +55,7 @@ var updateChart = function (count) {
 		dps2.push({x: xVal, y: yVal2 });
 	}
 	for (var j = 0; j < count; j++) {
+		//fetch(`https://exceed7.cpsk-club.xyz/parking?slot=3`,{  method: "GET", headers: {"Content-Type": "application/json"},})
 		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json") 
         .then(response => response.json())
 		.then((data) => {
@@ -61,10 +64,11 @@ var updateChart = function (count) {
 		dps3.push({x: xVal, y: yVal3 });
 	}
 	for (var j = 0; j < count; j++) {
-		fetch("http://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json")
+		//fetch(`https://exceed7.cpsk-club.xyz/parking?slot=4`,{  method: "GET", headers: {"Content-Type": "application/json"},})
+		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json") 
         .then(response => response.json())
 		.then((data) => {
-            yVal4 = data.result4.money; 
+            yVal4 = data.result4.total_money; 
         });
 		dps4.push({x: xVal, y: yVal4 });
 	}
