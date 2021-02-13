@@ -34,7 +34,7 @@ function getslot(i){
     .then((x) => {
         if(x.parking_is_available==true){
             if(box[i].className=="red_box"){
-                
+                price(i,x.money);
             }
             box[i].className="green_box";
             boxtext[i].className="green_txt";
@@ -56,9 +56,16 @@ function getslot(i){
 }
 
 
-function price(){
-    
+function price(i,m){
+    var pop = document.getElementById(`coinbox${i}`);
+    var txt = document.getElementById(`cointext${i}`);
+    pop.style.display = "block";
+    txt.style.display = "block";
+    txt.innerHTML=m;
 }
+
+
+
 
 
 
