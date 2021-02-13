@@ -27,3 +27,9 @@ function getslot1(){
         boxtext1.innerHTML=;
     }
 }
+
+
+setInterval(() => {
+    getslot1();
+
+}, 6000);
