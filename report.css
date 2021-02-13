@@ -1,0 +1,47 @@
+@import url(//db.onlinewebfonts.com/c/b3431dba10e27f650ab860da2775b426?family=Adam+Warren+pro);
+#box1 {
+    border-radius: 25px;
+    background: #a2e04b;
+    padding: 20px;
+    width: 100px;
+    height: 500px;
+  }
+
+#box2 {
+    border-radius: 25px;
+    background: rgb(253, 87, 87);
+    padding: 20px;
+    width: 100px;
+    height: 500px;
+}
+#row {
+    padding-top: 10%;
+    padding-left: 5%;
+    white-space: nowrap;
+  }
+  
+  #row > div {
+    width: 300px;
+    display: inline-block;
+  }
+
+#boxtext1{
+  background-color: black;
+  font-family: "Adam Warren pro";
+  color: white;
+  font-size: xx-large;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px; 
+
+}
+#boxtext2{
+  background-color: #a2e04b;
+  color: blue;
+  text-align: center;
+  font-family: "Adam Warren pro";
+  font-size: xx-large;
+  vertical-align: middle;
+  line-height: 150px; 
+}
+
