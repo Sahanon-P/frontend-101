@@ -3,25 +3,25 @@ window.onload = function () {
 var dps1 = []; var dps2 = []; var dps3 = []; var dps4 = [];
 
 var chart1 = new CanvasJS.Chart("slot1Chart", {
-	title :{ text: "Slot-1 Report"},
+	title :{ text: "Slot-1 Report",horizontalAlign: "left"},
 	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
 	data: [{type: "column", dataPoints: dps1}],
 	backgroundColor: "rgba(225,150,150,0.25)",
 });
 var chart2 = new CanvasJS.Chart("slot2Chart", {
-	title :{ text: "Slot-2 Report"},
+	title :{ text: "Slot-2 Report",horizontalAlign: "left"},
 	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
 	data: [{type: "column", dataPoints: dps2}],
 	backgroundColor: "rgba(78,202,140,0.25)",
 });
 var chart3 = new CanvasJS.Chart("slot3Chart", {
-	title :{ text: "Slot-3 Report"},
+	title :{ text: "Slot-3 Report",horizontalAlign: "left"},
 	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
 	data: [{type: "column", dataPoints: dps3}],
 	backgroundColor: "rgba(78,171,202,0.25)",
 });
 var chart4 = new CanvasJS.Chart("slot4Chart", {
-	title :{ text: "Slot-4 Report"},
+	title :{ text: "Slot-4 Report",horizontalAlign: "left"},
 	axisY: { title: "Total Income(Coin)"}, axisX: { title: "Time(min)", interval: 1},
 	data: [{type: "column", dataPoints: dps4}],
 	backgroundColor: "rgba(202,181,78,0.25)",
@@ -29,7 +29,7 @@ var chart4 = new CanvasJS.Chart("slot4Chart", {
 var xVal = 0;
 var yVal1 = 0; var yVal2 = 0; var yVal3 = 0; var yVal4 = 0;
 
-var updateInterval = 60000; // update is called every 60 seconds
+var updateInterval = 1000; // update is called every 60 seconds
 var dataLength = 5; // number of dataPoints visible at any point
 
 var updateChart = function (count) {
@@ -37,38 +37,40 @@ var updateChart = function (count) {
 	count = count || 1;
 
 	for (var j = 0; j < count; j++) {
-		fetch("https://backend.cpsk-club.xyz/6210503659") // this should be backend's json url {"",""}
+		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json")
         .then(response => response.json())
-        .then((data) => {
-            yVal1 = parseInt(data.answer); // this should be data.Car1Total
-			yVal2 = parseInt(data.answer); // this should be data.Car2Total
-			yVal3 = parseInt(data.answer); // this should be data.Car3Total
-			yVal4 = parseInt(data.answer); // this should be data.Car4Total
-			console.log(data)
+		.then((data) => {
+            yVal1 = data.result.money;
         });
 		dps1.push({x: xVal, y: yVal1 });
+	}
+	for (var j = 0; j < count; j++) {
+		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json")
+        .then(response => response.json())
+		.then((data) => {
+            yVal2 = data.result2.money;
+        });
 		dps2.push({x: xVal, y: yVal2 });
+	}
+	for (var j = 0; j < count; j++) {
+		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json") 
+        .then(response => response.json())
+		.then((data) => {
+            yVal3 = data.result3.money;
+        });
 		dps3.push({x: xVal, y: yVal3 });
+	}
+	for (var j = 0; j < count; j++) {
+		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json")
+        .then(response => response.json())
+		.then((data) => {
+            yVal4 = data.result4.money; 
+        });
 		dps4.push({x: xVal, y: yVal4 });
-		if(yVal1 != 0 && yVal2 != 0 &&  yVal3 != 0 &&  yVal4 != 0) // don't forward x-axis while initializing
-			xVal++;
 	}
 	
-	/*for (var j = 0; j < count; j++) {
-		fetch("https://backend.cpsk-club.xyz/twitter") // this should be backend's json url [{"",""},{"",""}]
-        .then(response => response.json())
-		.then((datas) => {
-            yVal1 = datas[0].money; // Car1
-			yVal2 = datas[1].money; // Car2
-			yVal3 = datas[2].money; // Car3
-			yVal4 = datas[3].money; // Car4
-        });
-		dps1.push({x: xVal, y: yVal1 });
-		dps2.push({x: xVal, y: yVal2 });
-		dps3.push({x: xVal, y: yVal3 });
-		dps4.push({x: xVal, y: yVal4 });
-		xVal++;
-	}*/
+	if(yVal1 != 0 && yVal2 != 0 &&  yVal3 != 0 &&  yVal4 != 0) // don't forward x-axis while initializing
+			xVal++;
 
 	if (dps1.length > dataLength) { dps1.shift(); }
 	if (dps2.length > dataLength) { dps2.shift(); }
