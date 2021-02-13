@@ -32,7 +32,8 @@
   font-size: xx-large;
   text-align: center;
   vertical-align: middle;
-  line-height: 90px; 
+  line-height: 50px; 
+
 }
 #boxtext2{
   background-color: #a2e04b;
@@ -41,6 +42,6 @@
   font-family: "Adam Warren pro";
   font-size: xx-large;
   vertical-align: middle;
-  line-height: 90px; 
+  line-height: 150px; 
 }
 
