@@ -73,6 +73,7 @@ function hide(){
    }
 }
 
+hide();
 setInterval(() => {
     hide();
 }, 10000);
