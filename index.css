@@ -1,18 +1,16 @@
 @import url(//db.onlinewebfonts.com/c/b3431dba10e27f650ab860da2775b426?family=Adam+Warren+pro);
 #box1 {
-    border-radius: 25px;
+    border-radius: 10px;
     background: #a2e04b;
-    padding: 20px;
-    width: 100px;
-    height: 500px;
+    padding: 15px;
+    height: 400px;
   }
 
 #box2 {
-    border-radius: 25px;
+    border-radius: 10px;
     background: rgb(253, 87, 87);
-    padding: 20px;
-    width: 100px;
-    height: 500px;
+    padding: 15px;
+    height: 400px;
 }
 #row {
     padding-top: 10%;
@@ -44,4 +42,24 @@
   vertical-align: middle;
   line-height: 150px; 
 }
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
 
+a:hover, a:active {
+  background-color: white;
+  color: #f44336;
+  border: 2px solid #f44336;
+}
+#bottom-center {
+  position:absolute;
+  bottom:50px;
+  right:30%;
+  left:50%;
+  margin-left:-100px;
+}
