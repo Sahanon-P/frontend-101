@@ -66,8 +66,8 @@ function price(i,m){
 
 function hide(){
    for(j=1;j<=4;j++){
-    var pop = document.getElementById(`coinbox${i}`);
-    var txt = document.getElementById(`cointext${i}`);
+    var pop = document.getElementById(`coinbox${j}`);
+    var txt = document.getElementById(`cointext${j}`);
     pop.style.display = "none";
     txt.style.display = "none";
    }
