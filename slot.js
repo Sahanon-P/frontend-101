@@ -21,12 +21,13 @@ let sec=0;
 function slot(){
     for(i=0;i<4;i++){
         getslot(i);
+        console.log(i);
     }
 }
 
 function getslot(i){
     c=i+1;
-    fetch(`/parking?slot=${c}`,{
+    fetch(`https://exceed7.cpsk-club.xyz:3000/parking?slot=${c}`,{  
         method: "GET",
         headers: {"Content-Type": "application/json"},
     }).then((x) => x.json())
