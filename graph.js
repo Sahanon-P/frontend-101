@@ -65,10 +65,10 @@ var updateChart = function (count) {
 	}
 	for (var j = 0; j < count; j++) {
 		//fetch(`https://exceed7.cpsk-club.xyz/parking?slot=4`,{  method: "GET", headers: {"Content-Type": "application/json"},})
-		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json") 
+		fetch("https://raw.githubusercontent.com/Sahanon-P/frontend-101/master/sample.json")
         .then(response => response.json())
 		.then((data) => {
-            yVal4 = data.result4.total_money; 
+            yVal4 = data.result4.money; 
         });
 		dps4.push({x: xVal, y: yVal4 });
 	}
