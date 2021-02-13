@@ -2,7 +2,6 @@
     border-radius: 25px;
     background: #73AD21;
     padding: 20px;
-    text-align: center;
     width: 100px;
     height: 500px;
   }
@@ -11,12 +10,10 @@
     border-radius: 25px;
     background: red;
     padding: 20px;
-    text-align: center;
     width: 100px;
     height: 500px;
-  }
-
-  #row {
+}
+#row {
     padding-top: 10%;
     padding-left: 5%;
     white-space: nowrap;
@@ -26,3 +23,19 @@
     width: 300px;
     display: inline-block;
   }
+
+#boxtext1{
+  background-color: black;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px; 
+}
+#boxtext2{
+  background-color: #73AD21;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px; 
+}
+
