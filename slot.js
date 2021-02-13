@@ -11,7 +11,7 @@ const box4=document.getElementById("box4");
 const boxtext4=document.getElementById("boxtext4");
 
 const box=[box1,box2,box3,box4];
-const boxtxt=[boxtext1,boxtext2,boxtext3,boxtext4];
+const boxtext=[boxtext1,boxtext2,boxtext3,boxtext4];
 
 let c=0;
 let min=0;
@@ -32,6 +32,9 @@ function getslot(i){
     }).then((x) => x.json())
     .then((x) => {
         if(x.parking_is_available==true){
+            if(box[i].className=="red_box"){
+                
+            }
             box[i].className="green_box";
             boxtext[i].className="green_txt";
             boxtext[i].innerHTML="Available"
@@ -52,8 +55,13 @@ function getslot(i){
 }
 
 
+function price(){
+    
+}
+
+
 
 setInterval(() => {
     slot();
-}, 6000);
+}, 5000);
 
