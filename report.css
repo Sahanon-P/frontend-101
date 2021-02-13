@@ -17,10 +17,8 @@
 }
 #bottom-center {
   position:absolute;
-  bottom: a;
   margin-top: auto;
   right:30%;
   left:50%;
-  /* margin-left:-100px; */
 }
 

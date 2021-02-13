@@ -1,4 +1,10 @@
 @import url(//db.onlinewebfonts.com/c/b3431dba10e27f650ab860da2775b426?family=Adam+Warren+pro);
+.h1{
+  text-align: center;
+  font-family: "Adam Warren pro";
+  color: white;
+  font-size: 85px;
+}
 .green_box {
     border-radius: 25px;
     background: #a2e04b;
@@ -13,7 +19,6 @@
     height: 400px;
 }
 #row {
-    padding-top: 10%;
     padding-left: 5%;
     white-space: nowrap;
   }
@@ -43,9 +48,10 @@
   line-height: 150px; 
 }
 a:link, a:visited {
-  background-color: #f44336;
+  background-color: #0d8aff;
   color: white;
   padding: 14px 25px;
+  font-family: "Adam Warren pro";
   text-align: center;
   text-decoration: none;
   display: inline-block;
